@@ -1,7 +1,7 @@
 package hello.itemservice.config;
 
 import hello.itemservice.repository.ItemRepository;
-import hello.itemservice.repository.jdbctemplate.JdbcTemplateRepositoryV2;
+import hello.itemservice.repository.jdbctemplate.JdbcTemplateRepositoryV3;
 import hello.itemservice.service.ItemService;
 import hello.itemservice.service.ItemServiceV1;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @RequiredArgsConstructor
-public class JdbcTemplateV2Config {
+public class JdbcTemplateV3Config {
 
     private final DataSource dataSource;
 
@@ -23,6 +23,6 @@ public class JdbcTemplateV2Config {
 
     @Bean
     public ItemRepository itemRepository(){
-        return new JdbcTemplateRepositoryV2(dataSource);
+        return new JdbcTemplateRepositoryV3(dataSource);
     }
 }
